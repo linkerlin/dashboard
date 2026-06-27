@@ -29,6 +29,6 @@ module.exports = {
     },
   },
   devServer: {
-    proxy: 'https://play.gorse.io',
+    proxy: 'https://play.groker.io',
   },
 };

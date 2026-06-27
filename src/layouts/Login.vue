@@ -1,8 +1,8 @@
 <template>
   <d-container>
     <div style="text-align: center;" class="align-center">
-      <img style="width: 120px; margin-top: 60px; margin-bottom: 20px" src="@/assets/images/gorse.png" alt="Gorse" />
-      <h5>Welcome to Gorse dashboard</h5>
+      <img style="width: 120px; margin-top: 60px; margin-bottom: 20px" src="@/assets/images/groker.png" alt="Groker" />
+      <h5>Welcome to Groker dashboard</h5>
       <d-card>
         <d-card-body>
           <d-form method="post" action="/login">

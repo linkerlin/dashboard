@@ -10,7 +10,7 @@
     <script>
       (function () {
         try {
-          var theme = window.localStorage.getItem('gorse-dashboard-theme');
+          var theme = window.localStorage.getItem('groker-dashboard-theme');
           if (theme !== 'dark' && theme !== 'light') {
             theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
           }
@@ -25,11 +25,11 @@
         }
       }());
     </script>
-    <title>Gorse Dashboard</title>
+    <title>Groker Dashboard</title>
   </head>
   <body class="h-100">
     <noscript>
-      <strong>We're sorry but Gorse Dashboard doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but Groker Dashboard doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->

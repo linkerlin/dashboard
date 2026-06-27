@@ -199,7 +199,7 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label>Query Template <a
-                    href="https://gorse.io/docs/concepts/ranking.html#large-language-models"
+                    href="https://groker.io/docs/concepts/ranking.html#large-language-models"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="ml-1"><i class="material-icons">help_outline</i></a></label>
@@ -209,7 +209,7 @@
                     v-model="nodeForm.properties.query_template"
                     style="font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; font-size: 0.85rem;" />
                   <label class="mt-4">Document Template <a
-                    href="https://gorse.io/docs/concepts/ranking.html#large-language-models"
+                    href="https://groker.io/docs/concepts/ranking.html#large-language-models"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="ml-1"><i class="material-icons">help_outline</i></a></label>
@@ -371,7 +371,7 @@
             </div>
             <div class="form-group">
               <label>Script <a
-                href="https://gorse.io/docs/concepts/recommenders/external.html"
+                href="https://groker.io/docs/concepts/recommenders/external.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="ml-1"><i class="material-icons">help_outline</i></a></label>

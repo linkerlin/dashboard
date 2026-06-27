@@ -78,7 +78,7 @@
                     </router-link>
                   </d-col>
                   <d-col sm="12" md="10">
-                    <label>Import users into gorse.</label>
+                    <label>Import users into groker.</label>
                   </d-col>
                 </d-row>
               </d-list-group-item>
@@ -91,7 +91,7 @@
                     </router-link>
                   </d-col>
                   <d-col sm="12" md="10">
-                    <label>Import items into gorse.</label>
+                    <label>Import items into groker.</label>
                   </d-col>
                 </d-row>
               </d-list-group-item>
@@ -103,7 +103,7 @@
                     </router-link>
                   </d-col>
                   <d-col sm="12" md="10">
-                    <label>Import feedbacks into gorse.</label>
+                    <label>Import feedbacks into groker.</label>
                   </d-col>
                 </d-row>
               </d-list-group-item>

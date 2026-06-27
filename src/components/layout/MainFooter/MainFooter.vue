@@ -16,13 +16,13 @@
 <script>
 const defaultMenuItems = [{
   title: 'Home',
-  to: 'https://gorse.io/',
+  to: 'https://groker.io/',
 }, {
   title: 'GitHub',
-  to: 'https://github.com/gorse-io/gorse',
+  to: 'https://github.com/linkerlin/groker',
 }, {
   title: 'Document',
-  to: 'https://gorse.io/docs',
+  to: 'https://groker.io/docs',
 }, {
   title: 'API',
   to: '/apidocs/',
@@ -45,7 +45,7 @@ export default {
        */
     copyright: {
       type: String,
-      default: `Copyright © ${new Date().getFullYear()} zhenghaoz`,
+      default: `Copyright © ${new Date().getFullYear()} Groker`,
     },
     /**
        * Whether the footer should be wrapped in a container, or not.
