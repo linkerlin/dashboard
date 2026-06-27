@@ -1,43 +1,44 @@
-// Package dashboard registers the web dashboard assets into the statik
-// filesystem so that master/rest.go can serve them via fs.New().
+// Package dashboard embeds the built Vue dashboard assets and registers them
+// into the statik filesystem so master/rest.go can serve the UI via fs.New().
 //
-// ponytail: registers a placeholder index.html generated at init time. Replace
-// by running `statik -src=dist` over a built Vue bundle when the real UI is
-// needed; fs.New() succeeds with this minimal zip, so all API tests pass.
+// The dist/ tree is produced by `pnpm build` in this repository and committed
+// so that consumers fetching this module get the prebuilt assets via go:embed.
 package dashboard
 
 import (
 	"archive/zip"
 	"bytes"
+	"embed"
+	"io"
+	"io/fs"
+	"strings"
 
-	"github.com/rakyll/statik/fs"
+	statikfs "github.com/rakyll/statik/fs"
 )
 
-const indexHTML = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Groker Dashboard</title>
-</head>
-<body>
-<h1>Groker Dashboard</h1>
-<p>Dashboard web assets are not built. See the dashboard repository.</p>
-</body>
-</html>
-`
+//go:embed all:dist
+var dist embed.FS
 
 func init() {
 	var buf bytes.Buffer
-	w := zip.NewWriter(&buf)
-	f, err := w.Create("index.html")
-	if err != nil {
-		panic("dashboard: create index.html in zip: " + err.Error())
-	}
-	if _, err := f.Write([]byte(indexHTML)); err != nil {
-		panic("dashboard: write index.html: " + err.Error())
-	}
-	if err := w.Close(); err != nil {
-		panic("dashboard: close zip: " + err.Error())
-	}
-	fs.Register(buf.String())
+	zw := zip.NewWriter(&buf)
+	_ = fs.WalkDir(dist, "dist", func(path string, d fs.DirEntry, err error) error {
+		if err != nil || d.IsDir() {
+			return nil
+		}
+		data, rerr := dist.ReadFile(path)
+		if rerr != nil {
+			return rerr
+		}
+		// statik/fs stores each entry under "/"+name, so emit relative paths.
+		rel := strings.TrimPrefix(path, "dist/")
+		w, werr := zw.Create(rel)
+		if werr != nil {
+			return werr
+		}
+		_, werr = io.Copy(w, bytes.NewReader(data))
+		return werr
+	})
+	_ = zw.Close()
+	statikfs.Register(buf.String())
 }
