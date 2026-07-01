@@ -47,6 +47,7 @@ export default {
         { icon: 'dns', name: 'Number of Servers', key: '$.NumServers' },
         { icon: 'tag', name: 'Number of User Labels', key: '$.NumUserLabels' },
         { icon: 'tag', name: 'Number of Item Labels', key: '$.NumItemLabels' },
+        { icon: 'tune', name: 'Ranker Type', key: '$.RankerType' },
         { icon: 'group_work', name: 'Matching Model Fit Time', key: '$.MatchingModelFitTime' },
         { icon: 'group_work', name: 'Matching Model Precision@10', key: '$.MatchingModelScore.Precision' },
         { icon: 'group_work', name: 'Matching Model Recall@10', key: '$.MatchingModelScore.Recall' },
@@ -55,6 +56,10 @@ export default {
         { icon: 'ads_click', name: 'Ranking Model Precision', key: '$.RankingModelScore.Precision' },
         { icon: 'ads_click', name: 'Ranking Model Recall', key: '$.RankingModelScore.Recall' },
         { icon: 'ads_click', name: 'Ranking Model AUC', key: '$.RankingModelScore.AUC' },
+        { icon: 'leaderboard', name: 'LTR Model Version', key: '$.LTRModelID' },
+        { icon: 'leaderboard', name: 'LTR Test NDCG', key: '$.LTRModelScore.TestNDCG' },
+        { icon: 'leaderboard', name: 'LTR Train NDCG', key: '$.LTRModelScore.TrainNDCG' },
+        { icon: 'leaderboard', name: 'LTR NDCG@K', key: '$.LTRModelScore.NDCGK' },
       ],
       status: {},
     };
